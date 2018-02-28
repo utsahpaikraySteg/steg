@@ -1,0 +1,58 @@
+<div class="wrapper">
+ <form class="form-horizontal" role="form" name="loginForm" novalidate style="background-color: {{myservice.colorfetch}}">
+    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+    <hr class="colorgraph"><br> 
+    <div class="form-group" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <!-- <input type="text" id="userName" name="userName" placeholder="User Name" class="form-control" ng-model="myservice.FirstName" required /> -->
+                 <input type="text" class="form-control"  id="userName" name="userName" placeholder="User Name" class="form-control" ng-model="myservice.FirstName" required  autofocus="" />
+                <span class="help-block" ng-show="loginForm.userName.$touched && loginForm.userName.$invalid">Please enter User Name.</span>
+            </div>
+            <div class="col-sm-3"></div>
+          
+        </div>
+        <div class="form-group" >
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <!-- <input type="password" id="password" name="password" placeholder="Password" class="form-control" ng-model="myservice.Password" required /> -->
+                 <input type="password" class="form-control" id="password" name="password" placeholder="Password" class="form-control" ng-model="myservice.Password" required />
+                <span ng-show="loginForm.password.$touched && loginForm.password.$error.required">Please enter Password.</span>
+            </div>
+            
+            <div class="col-sm-3"></div>
+        </div>
+        <div class="form-group" >
+                <div class="col-sm-3"></div>
+                <div class="col-sm-3">
+                        <!-- <input type="submit" value="Login" class="btn btn-primary col-sm-offset-3" ng-click="authenticateUser(myservice.FirstName)" /> -->
+                   <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="authenticateUser(myservice.FirstName)">Login</button>
+                </div>
+                
+                <!-- <div class="col-sm-3"> <input type="submit" value="Newuser" class="btn btn-primary col-sm-offset-3" ng-click="authenticate()" /> -->
+                    <div class="col-sm-3">
+                    <button type="submit"  class="btn btn-lg btn-primary btn-block" ng-click="authenticate()">NewUser</button>
+                </div>
+                <div class="col-sm-3"></div>
+        </div>
+        
+        
+        </div>
+</form> 
+</div>
+
+	<!-- <div class="wrapper">
+		<form class="form-horizontal" role="form" name="loginForm" novalidate style="background-color: {{myservice.colorfetch}}" class="form-signin">       
+		    <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+			  <hr class="colorgraph"><br>
+			  
+             
+              <input type="text" class="form-control"  id="userName" name="userName" placeholder="User Name" class="form-control" ng-model="myservice.FirstName" required  autofocus="" />
+              <span class="help-block" ng-show="loginForm.userName.$touched && loginForm.userName.$invalid">Please enter User Name.</span>
+			  <input type="password" class="form-control" id="password" name="password" placeholder="Password" class="form-control" ng-model="myservice.Password" required />     		  
+			  <button type="submit" value="Login" class="btn btn-lg btn-primary btn-block" ng-click="authenticateUser(myservice.FirstName)" />Login</button>
+			  <button type="submit" value="Newuser" class="btn btn-lg btn-primary btn-block" ng-click="authenticate()" />NewUser</button>			
+		</form>			
+	</div>
+
+ -->

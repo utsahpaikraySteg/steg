@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        nav{
+            float: right;
+            margin: -56px;
+            top: -6px;
+        }
+        .divcolor{
+            height:100px;
+            height:100px;
+        }
+       
+    </style>
+</head>
+<body>
+        <input type="color" name="favcolor" value="#ff0000">
+        <input type="submit">
+    <div ng-app="dashboard" ng-controller="dashboard-cntr"  bgcolor="#E6E6FA">
+        <div class="container">
+             <div class="jumbotron">
+                 <h1>DashBaord Profile</h1>
+                
+                
+                 <img class="img-responsive" ng-src="{{selectedName}}" alt=""  height="200" width="200" > 
+             </div>  
+             <select ng-model="selectedName" required ng-options=" option.ImageSrc as option.CustomerID for option in image"> </select>
+             <input type="color" name="favcolor" >
+             <div class="divcolor" background-color="green">sdgdf</div>
+        {{fcolor}}
+        </div>
+        <input type="file" ng-model="model.file" change="upload(model)" />
+        <img ng-src="{{model.file}}" alt="">
+    </div>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular-resource.min.js"></script>
+    <script src="js/angular-file.js"></script>
+   <script>
+        var app= angular.module("dashboard",['ur.file', 'ngResource']);
+        app.controller('dashboard-cntr',function($scope,$resource){
+          $scope.image=
+                [
+                    {
+                      "ImageSrc": "image/1.svg",
+                      "CustomerID": "Happy"
+                    },
+                    {
+                      "ImageSrc": "image/2.svg",
+                      "CustomerID": "Ashish"
+                    },
+                    {
+                      "ImageSrc": "image/3.svg",
+                      "CustomerID": "Utsah"
+                    }
+                ];
+                $scope.selectedName =  $scope.image[0].ImageSrc;
+                $scope.fcolor="green";
+
+
+                    var Files = $resource('/files/:id', { id: "@id" });
+        
+                    angular.extend($scope, {
+        
+                        model: { file: null },
+        
+                        upload: function(model) {
+                            Files.prototype.$save.call(model.file, function(self, headers) {
+                                
+                            });
+                        }
+                    });
+                });
+    
+   </script>
+</body>
+</html>

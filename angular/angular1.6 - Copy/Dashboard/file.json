@@ -1,0 +1,11 @@
+[
+    {
+        "nav": {
+            "userName": "nav",
+            "color": "#000040",
+            "fontFamily": "string: 'Open Sans', sans-serif",
+            "FontSize": "52",
+            "Image": "image/2.svg"
+        }
+    }
+]

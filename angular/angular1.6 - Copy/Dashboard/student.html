@@ -1,0 +1,49 @@
+<div>
+   <button class="btn btn-info" id="logout"><a href="#!login">Home Page</a></button> 
+</div>
+
+<form class="form-horizontal" ng-submit="submitStudnetForm()"  role="form" id="formdata">
+    <div class="form-group">
+        <label for="firstName" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-6">
+            <input type="text" id="firstName" value="firstName" name="firstName" class="form-control" ng-model="firstName" />
+        </div>
+        <div class="col-sm-3"></div>
+
+    </div>
+    <div class="form-group">
+        <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-6">
+            <input type="text" id="lastName" value="lastName" name="lastName" class="form-control" ng-model="lastName" />
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+        
+    <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-6">
+            <input type="email" id="email" value="email" name="email" class="form-control" ng-model="email" placeholder="sds@gmail.com" />
+        </div>
+        <div class="col-sm-7"></div>
+    </div>
+        
+    <!-- <div class="form-group">
+        <label for="gender" class="col-sm-3 control-label">Gender</label>
+        <div class="col-sm-2">
+            <select id="gender" class="form-control" value="gender" name="gender" ng-model="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="col-sm-7"></div>
+    </div> -->
+ 
+    <input type="submit" value="Save" class="btn btn-primary col-sm-offset-3" ng-click="forward(firstName)" />
+    <input type="reset" value="Reset" ng-click="resetForm()" class="btn btn-primary" />
+    <input type="button" name="" id="submit" value="Register">
+</form>
+<!-- <h1> Login Infomation </h1>
+
+FirstName:{{firstName}}
+LastNAme:{{lastName}}
+DOB:{{DoB}} -->

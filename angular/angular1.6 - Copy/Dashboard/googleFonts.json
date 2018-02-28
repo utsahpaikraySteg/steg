@@ -1,0 +1,28 @@
+{
+	"font-family": [" 'Roboto', sans-serif;",
+		" 'Open Sans', sans-serif",
+		" 'Open Sans', sans-serif",
+		" 'Kavivanar', cursive",
+		" 'Sedgwick Ave Display', cursive",
+		" 'Indie Flower', cursive",
+		" 'Saira Condensed', sans-serif",
+		" 'Dosis', sans-serif",
+		" 'Nunito Sans', sans-serif",
+		" 'Crimson Text', serif",
+		" 'Anton', sans-serif",
+		" 'Inconsolata', monospace",
+		" 'Abril Fatface', cursive",
+		" 'Pacifico', cursive",
+		" 'Acme', sans-serif",
+		" 'Encode Sans Semi Expanded', sans-serif",
+		" 'Dancing Script', cursive",
+		" 'Play', sans-serif",
+		" 'Source Serif Pro', serif",
+		" 'Courgette', cursive",
+		" 'Crete Round', serif",
+		" 'Amatic SC', cursive",
+		" 'Ropa Sans', sans-serif",
+		" 'Source Code Pro', monospace",
+		" 'Patua One', cursive"
+	]
+}

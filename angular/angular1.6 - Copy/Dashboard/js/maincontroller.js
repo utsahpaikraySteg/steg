@@ -1,0 +1,1 @@
+var app= angular.module("dashboard", ['ngRoute', 'ngAnimate', 'zingchart-angularjs']);

@@ -1,0 +1,68 @@
+<div id="userinfo">
+  <p>Welcome {{myservice.FirstName}}</p>
+</div>
+<div class="panel"  style="font-family:{{selectedName}}; color:{{formColor}}" >
+    <form id="my-profile">
+      <div class="panel-body">
+          <div class="form-group col-sm-12">
+              <div class="row">
+                <div class="col-sm-2">
+                  <label>User Name</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" value="{{myservice.FirstName}}" ng-model="theme.Name" name="{{Name}}.userName">
+                </div>
+              </div>
+            </div>
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <div class="col-sm-2">
+              <label>Background Color</label>
+            </div>
+            <div class="col-sm-2">
+              <input type="color" ng-model="theme.formColor" class="form-control" value="" name="{{Name}}.color">
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <div class="col-sm-2">
+              <label>Font Family</label>
+            </div>
+            <div class="col-sm-4">
+                <select ng-model="theme.selectedName" required ng-options=" option for option in GoogleFont" name="{{Name}}.fontFamily"> </select>
+          
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-12">
+          <div class="row">
+            <div class="col-sm-2">
+              <label>Font Size</label>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" ng-model="theme.text" value="" name="{{Name}}.FontSize">
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-12">
+            <div class="row">
+              <div class="col-sm-2">
+                <label>Upload Image</label>
+              </div>
+              <div class="col-sm-4">
+                  <input type="file" id="myFile" value="" ng-model="theme.Image" class="form-control"> 
+                  <input type="text" name="{{Name}}.Image"  ng-init="Image='angular.JPG' " value="image/{{Image}}"  id="" class="form-control">  
+              </div>
+            </div>
+          </div>
+        <div class="form-group col-sm-12">
+          <input class="btn btn-info" type="submit" name="" value="Save" id="savedata" >
+          <button  type="submit" id="getJson" class="btn btn-info" >GetJSON</button>
+
+          <button  type="button" ng-click="submitTheme(theme)" id="getJson" class="btn btn-info" >submit</button>
+        </div>
+        
+      </div>
+    </form>
+  </div>

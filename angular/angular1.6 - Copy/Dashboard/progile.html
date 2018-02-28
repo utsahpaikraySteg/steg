@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Acme|Amatic+SC|Anton|Courgette|Crete+Round|Crimson+Text|Dancing+Script|Dosis|Encode+Sans+Semi+Expanded|Inconsolata|Indie+Flower|Kavivanar|Nunito+Sans|Open+Sans|Pacifico|Patua+One|Play|Roboto|Ropa+Sans|Saira+Condensed|Sedgwick+Ave+Display|Source+Code+Pro|Source+Serif+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+  </head>
+  <body ng-app="dashboard">
+    <div class="container">
+      <div ng-controller="dashboard-cntr" ng-controller="UploadController" class="clearfix">
+        <div class="jumbotron clearfix" style="background-color: {{myservice.colorfetch}}">
+          <h1 style="font-size:{{myservice.FontSizefetch}}px">DashBoard Profile</h1></br>
+          <h1>{{myservice.FirstName}}</h1>
+          <!-- <img class="img-responsive" ng-src="{{selectedName}}" alt=""  height="200" width="200" > -->
+          <div id="imageprofile" class="img-circle"  >
+            <img ng-src="{{imageSrc}}"    width="304" height="236"  ng-show="imageSrc"/>
+            <img ng-src="{{myservice.OriImage}}"    width="304" height="236"  ng-show="myservice.show"/>
+            <i class="fa fa-camera" aria-hidden="true"></i>
+            <input type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" multiple>    
+          </div>
+        </div>
+        
+      
+      <!-- <select ng-model="selectedName" required ng-options=" option.ImageSrc as option.CustomerID for option in image"> </select>-->
+      <!-- <div ng-controller="localstorage">
+          workig with local storage
+          <input type="text" name="loacl" id="textarea">
+          <input type="text" name="loacl" id="textareavalue">
+          <input type="button" name="submit" value="store" id="store" class="btn btn-success">
+          <button class="btn btn-success">localstorage</button>
+        </div>-->
+        <div class="clearfix">
+          <div id="CustomButton">
+              <button type="button" class="btn btn-primary">
+                <a href="#!login">LOGIN</a>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <a href="#!student">User Form</a>
+              </button>
+              <button type="button" class="btn btn-primary">
+                <a href="#!ThemeSetting">Theme Setting</a>
+              </button>
+          </div>
+        </div>
+    
+        <!-- <div id="profileimage">
+          <img  ng-src=" {{myservice.OriImage}}" width="150" height="150" ng-show="myservice.show" />
+        </div>-->
+
+      <div ng-view class="view" ng-hide="myservice.show"></div>
+      <div id="profileDisplay">
+         
+          <div id="include" ng-controller="ExampleController"  ng-show="myservice.show" >
+            <div class="col-sm-4 slide-animate-container">
+            <div class="slide-animate" ng-include="templates" [autoscroll="true"] ></div>
+            </div>
+            <div class="col-sm-8" ng-controller="ChartController">
+              <div zingchart id="chart-1" zc-json="myJson" zc-width="100%" zc-height="450px"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+      <!--<div ng-controller="FirstCtrl">
+        <input type="text" ng-model="Data.FirstName">
+        <br>Input is : <strong>{{Data.FirstName}} {{Data.SecondName}}</strong>
+      </div>
+      <hr>
+      <div ng-controller="SecondCtrl">
+          <input type="text" ng-model="Data.SecondName">
+        Input should also be here: {{Data.FirstName}} {{Data.SecondName}}
+      </div>
+      <div ng-controller="DataController1">  
+        <h2>In Controller 1</h2>       
+        <input type="text" ng-model="Product.name" /> <br/>       
+        <input type="text" ng-model="Product.price" />      
+        <h2>Product {{Product.name}} costs {{Product.price}}  </h2>      
+      </div>
+      <hr/>
+      <div ng-controller="DataController2">
+        <h2>In Controlle2 </h2>       
+        <h3>Product {{Product.name}} costs {{Product.price}} </h3>
+      </div>-->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular-animate.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js" ></script>  
+    <script src="https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script> 
+    <script src="js/maincontroller.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="js/sanitize.js"></script>
+    <script src="js/serializejson.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+    <script src="https://rawgit.com/feathersjs/feathers-client/2934572de2652aababc03f2697c8f82465e5ec53/dist/feathers.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular-resource.min.js"></script>-->
+    <script>
+      app.factory('myservice', function () {
+        return {
+          FirstName: '',
+          Password: '',
+          checkName:'',
+          colorfetch:'',
+          fontFamilyfetch:'',
+          FontSizefetch:'',
+          Image:'',
+          OriImage:'',
+          show:'',
+          jsonFormData:'',
+          vardata:''
+        };
+      });
+      window.onload= function(){
+        var getdata= JSON.parse(localStorage.getItem("Welcome nav"));
+        console.log(getdata);
+        console.log("get your data");
+    };
+
+    /* app.controller('FirstCtrl', function( $scope, Data ){
+        $scope.Data = Data;
+      });
+
+      app.controller('SecondCtrl', function( $scope, Data ){
+        $scope.Data = Data;
+      });
+
+      app.service('SharedDataService', function () {
+  var Product = {
+          name: '',
+          price: ''
+      };
+    return Product;
+  });
+
+  app.controller("DataController1", ['$scope', 'SharedDataService',
+      function ($scope, SharedDataService) {
+      $scope.Product = SharedDataService;
+      }]);
+
+  app.controller("DataController2", ['$scope', 'SharedDataService',
+      function ($scope, SharedDataService) {
+      $scope.Product = SharedDataService;
+  }]);*/
+    </script>
+    <script src="js/localstorageController.js"></script>
+    <script src="js/dashboardcontroller.js"></script>
+    <script src="js/themecontroller.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/logincontroller.js"></script>
+    <script src="js/profileinfocontroller.js"></script>
+    <script src="js/userdataController.js"></script>
+    <script src="js/UploadController.js"></script>
+    <script src="js/serialze-json.js"></script>
+    <script src="js/include-controller.js"></script>
+    <script src="js/ChartController.js"></script>
+  </body>
+</html>

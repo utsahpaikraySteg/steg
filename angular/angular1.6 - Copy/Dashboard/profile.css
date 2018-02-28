@@ -1,0 +1,77 @@
+body{
+  font-family: 'Courier New', cursive;
+  text-shadow: 2px 2px 2px rgb(216, 138, 138);
+}
+nav{
+    float: right;
+    margin: -56px;
+    top: -6px;
+}
+.divcolor{
+    height:100px;
+    height:100px;
+}
+img{
+ 
+  border-radius:111px;
+}
+.container #imageprofile input[type=file] {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 6px;
+  text-indent: -200px;
+}
+.jumbotron h1 {
+  float: left;
+}
+.container #imageprofile {
+  float: right;
+  border: 1px solid #c0c0c0;
+  width: 128px;
+  height: 128px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.container #imageprofile .fa-camera {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  padding: 10px;
+}
+a{
+  color: #01080e;
+  text-decoration: none;
+}
+.view{
+    margin: 84px auto 0;
+    border: 10px solid #e9517a;
+    border-radius: 9px;
+    position: relative;
+    width: 800px;
+}
+.form-horizontal{
+   
+    margin: 21px;
+    padding: 16px;
+}
+#logout{
+    float: right;
+    margin-top: -29px;
+    margin-right: 16px;
+}
+#CustomButton{
+  float: right;
+}
+div.jumbotron.clearfix{
+  background-color: #8ff38b;
+}
+#include{
+  height:300px;
+}
