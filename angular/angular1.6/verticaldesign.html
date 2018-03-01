@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  
+  
+    <style>
+      *{margin: 0;padding: 0;box-sizing: border-box;}
+      html,body {
+       
+        min-height: 100%;
+        /*background: url(https://www.constant-content.com/content-writing-service/wp-content/uploads/2016/08/writer-skills.jpg);*/
+        /*background: url( https://images.fineartamerica.com/images-medium-large/srb-candlelit-library-susan-herber.jpg);*/
+        background: url(https://wallpapercave.com/wp/B54G3xw.jpg);
+       
+      }
+      input[type="button"] {
+        background: rgba(0,0,0,0.8);
+        border: none;
+        padding: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        width: 480px;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        border-radius: 0;
+      }
+      input[type="button"]:hover {
+        background: rgba(0,0,0,1);
+      }
+      .card-profile {
+        margin-top: 80px;
+        -webkit-box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.8);
+                box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.8);
+      }
+      .card-profile .card-img-top {
+        width: 100%;
+        height: 180px;
+      }
+      .main-content img.card-img-top{
+        margin-top: -82px;
+    }
+    .main-content .card-profile{
+        margin-top: 63px;
+    }
+    .main-content{
+        padding-left: 326px;
+    }
+    .main-content img.card-img-profile{
+        max-width: 100%;
+        border-radius: 50%;
+        margin-top: -95px;
+        margin-bottom: 35px;
+        border: 5px solid #f1f1ed;
+        height: 160px;
+        width: 160px;
+        margin-left: 132px;
+      }
+      .card-profile .card-img-profile {
+        max-width: 100%;
+        border-radius: 50%;
+        margin-top: -95px;
+        margin-bottom: 35px;
+        border: 5px solid #f1f1ed;
+        height: 160px;
+        width: 160px;
+      }
+      .card-profile .card-title {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+      .card-profile .card-title small {
+        display: block;
+        font-size: .6em;
+        margin-top: .2em;
+      }
+      .card-profile .card-links {
+        margin-bottom: 25px;
+      }
+      .card-profile .card-links .fa {
+        margin: 0 1em;
+        font-size: 1.6em;
+      }
+      .card-profile .card-links .fa:focus, .card-profile .card-links .fa:hover {
+        text-decoration: none;
+      }
+      .title {
+        font-family:'Nova Flat', cursive;
+        font-size: 14px;
+        font-weight: bold;
+        color: #000606fa;
+       
+      }
+      .card-block {
+        background: rgba(255,255,255,0.3);
+        position: relative;
+        padding: 15px;
+      }
+      .details {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px;
+        max-height: 32px;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      .poem,.dob {
+        min-height: 44px;
+      }
+      h1{
+        color: #F0FFFF;
+      }
+      h4.card-title{
+        font-weight: bold;
+        color: #0c100c;
+      }
+      button {
+      border: none;
+      padding: 10px;
+      color: white;
+      background-color: #000;
+      width: 100%;
+      border-radius: 5px;
+      margin-top: 32px;
+      }
+      button:hover, a:hover {
+        opacity: 0.7;
+      }
+      h4.card-title{
+          margin-top: -10px;
+      }
+      .main-content .popular {
+        background: #fff;
+      }
+      .main-content .popular .item {
+        float: left;
+        width: 25%;
+        text-align: center;
+        position: relative;
+        padding-bottom: 20px;
+      }
+      .main-content .popular .item:after {
+        content: "";
+        width: 2px;
+        height: 100%;
+        background: #f5f5f5;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .main-content .popular .item p {
+        text-align: left;
+        padding-left: 20px;
+      }
+      .main-content .popular .item p a {
+        font-size: 16px;
+        color: #414a56;
+      }
+      .scroll{
+        top: 78px;
+        height: 627px;
+        width: 387px;
+        /* padding-left: 102px; */
+        overflow: scroll;
+        margin: 0px;
+       
+        margin-left: 75px;
+        
+      }
+    .card-profile1 {
+    margin-top: 43px;
+    -webkit-box-shadow: 0px 0px 22px rgba(22, 17, 17, 0.8);
+    box-shadow: 0px 0px 22px rgba(39, 6, 6, 0.8);
+}
+
+    </style>
+  </head>
+  <body  ng-app="profilecard" ng-controller="profileCardController" >
+       
+      <div  style="background:linear-gradient({{color}},{{color1}})">
+            
+            <input class="btn btn-primary" type="button" value="Profile Presenatation" ng-click="GenerateTable()" ng-show="buttonValue"/>
+           
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                   <h1> World Famous Writer</h1>
+                   
+                </div>
+              </div>
+              	
+
+              <div class="row container-fluid">
+                    <div class="main-content">
+                    <div class="popular">
+                            <div class="item" ng-repeat="x in datavalue">
+                                    <div class='card card-profile text-center'   style="background:linear-gradient({{x.color}},{{x.color1}})" >
+                                            <img alt='' class='card-img-top' ng-src='{{x.imgBackground}}' height:"160px" width="340px" >
+                                              <div class='card-block' >
+                                                <img alt='' class='card-img-profile' ng-src='{{x.profileImage}}'>
+                                                <h4 class='card-title'>
+                                                  {{x.first_name|uppercase }} {{x.last_name |uppercase }}
+                                                  
+                                                </h4>
+                                                <p  class="title dob"> Life Span:{{x.Duration}}</p>
+                                                <p  class="title dob"> BornIn:{{x.Born}}</p>
+                                                <p  class="title poem"> Writing:{{x.Writting}}</p>
+                                                <p  class="title details"> Details:{{x.detail}}</p>
+                                                <a href='{{x.href}}' target="_blank">read more</a>
+                                                <p><button> {{x.first_name |uppercase }} {{x.last_name |uppercase }}</button></p>
+                                              </div>
+                                            </div> 
+                            </div>
+                        </div>
+                     </div>
+              </div>
+               
+                <div class="col-md-12 container-fluid" ng-show="IsVisible">
+                        
+                     <div class="col-md-7" id="animation">
+                     
+                        <div class='card card-profile text-center' ng-show="myVar" >
+                            <img alt='' class='card-img-top' ng-src='{{imgBackground}}' height:"160px" width="340px" >
+                            <div class='card-block' style="background:linear-gradient({{color}},{{color1}})" >
+                            <img alt='' class='card-img-profile' ng-src='{{profileImage}}'>
+                            <h4 class="card-title anothertext" data-value={{first_name|uppercase}}{{last_name|uppercase}}>
+                              
+                                
+                            </h4>
+                            <p  class="title dob anothertext" data-value="Duration"> Duration:</p>
+                            <p  class="title dob anothertext" data-value={{Born}}>BornIn: </p>
+                            <p  class="title poem anothertext" data-value={{Writting}}>Writing: </p>
+                            <p  class="title details anothertext" data-value={{detail}}>Details:</p>
+                            <a href='{{href}}'  target="_blank" data-value="Read More"></a>
+                            <p><button  class="anothertext" data-value="{{first_name |uppercase }} {{last_name |uppercase }}"> </button></p>
+                            </div>
+                        </div>
+                     </div> 
+                     <div class="col-md-5 scroll" style="background:linear-gradient({{color}},{{color1}})">
+                       <div class="col-md-12">
+                          <form>
+                        
+                              <input type="search" placeholder="Search Writer:" class="form-control input-sm" ng-model="test">
+             
+                             </form>
+                        <div class="col-md-12" ng-repeat="x in datavalue | filter:test">
+                          <div class='card1-profile text-center'  >
+                               
+                               <button value="{{x.first_name |uppercase }}" ng-click="ValidName(this)"> <span class="badge">{{x.id }}</span> {{x.first_name |uppercase }} {{x.last_name |uppercase }}</button>
+                              </div>
+                            </div>
+                         </div>
+                       </div>
+                     </div>   
+                
+                 </div>
+               </div>
+             </div>
+      
+   
+   
+    
+
+      <script
+      src="http://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+    <script>
+           
+          </script>
+     
+      <script>
+        var app = angular.module('profilecard', []);
+         app.controller('profileCardController', function($scope) {
+          $scope.color='#'+Math.floor(Math.random()*16777215).toString(16);
+            $scope.color1='#'+Math.floor(Math.random()*16777215).toString(16);
+            $scope.IsVisible = false;
+           $scope.buttonValue=true;
+           $scope.myVar=false;
+           var k=0;
+           $scope.ValidName = function (objButton) {
+            $scope.myVar=true;
+           
+            var fullname=objButton.x.first_name + " "+objButton.x.last_name;
+            //responsiveVoice.speak("Writer Name");
+           // responsiveVoice.speak(fullname);
+             
+               $scope.first_name=objButton.x.first_name;
+               $scope.last_name=objButton.x.last_name;
+               $scope.Born=objButton.x.Born;
+               $scope.Duration=objButton.x.Duration;
+               $scope.Novel=objButton.x.Novel;
+               $scope.Writting=objButton.x.Writting;
+               $scope.detail=objButton.x.detail;
+               $scope.gender=objButton.x.gender;
+               $scope.href=objButton.x.href;
+               $scope.imgBackground=objButton.x.imgBackground; 
+               $scope.profileImage=objButton.x.profileImage;
+                // responsiveVoice.speak("born In");
+                // responsiveVoice.speak($scope.Duration);
+                // responsiveVoice.speak("born At");
+                // responsiveVoice.speak($scope.Born);
+                // responsiveVoice.speak("Novel Writtings");
+                // responsiveVoice.speak($scope.Writting);
+                // responsiveVoice.speak("description");
+                // responsiveVoice.speak( $scope.detail);
+                var classes = document.getElementsByClassName('anothertext');  
+        var ValueArray=[];
+        var alldata=[];
+        var ValueArray1=[];
+        var sum=0; 
+        
+        while(k<classes.length) {
+                var userdata = classes[k].getAttribute("data-value"); 
+                alldata.push(userdata);
+                  
+                for (var i = 0; i < userdata.length; i++) {
+                    ValueArray.push(userdata.charAt(i));       
+                    };
+                    var sum=sum+userdata.length;
+                   
+                    ValueArray1.push(sum);  
+                     console.log(ValueArray1); 
+              
+                
+                k++;
+             }  
+             var arrayLength=ValueArray.length;
+             var j=0;
+             var color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+             var count=0;
+             var divCount=0;
+    
+     setInterval(function(){   
+        j=j+1;  
+        count=count+1;
+       
+        while (j<=arrayLength) {
+            var value=ValueArray.shift();
+            console.log(ValueArray.length);
+           if(value==" "){
+               color='#'+(Math.random()*0xFFFFFF<<0).toString(16);
+            }
+                    var value1=value.fontcolor(color);
+                    
+                   if(count<=ValueArray1[0]){
+                    $(".anothertext")[divCount].innerHTML +=value1;
+                    if(count==ValueArray1[0]){
+                        ValueArray1.shift();
+                        divCount= divCount+1;
+                    }
+                   }   
+                   break;
+     }       
+},100);
+           };
+            $scope.GenerateTable = function () {
+                $scope.datavalue = [
+                {
+                    id: 1,
+                    first_name: "William Butler",
+                    last_name: "Yeats",
+                    gender: "Male",
+                    Novel:"Novel Prize Winner",
+                    Duration:"1865-1939",
+                    Born: "Sandymount, Republic of Ireland",
+                    Writting:"Sailing to Byzentium",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://12byzantinerulers.com/images/christ-pantocrator.png",
+                    profileImage: "http://d28hgpri8am2if.cloudfront.net/author_images/8904_1451794_hr.jpg",
+                    detail:"William Butler Yeats was an Irish poet and one of the foremost figures of 20th century literature.",
+                    href:"https://en.wikipedia.org/wiki/W._B._Yeats"
+                   
+                  },
+                  {
+                    id: 2,
+                    first_name: "Ezra",
+                    last_name: "Pound",
+                    gender: "Male",
+                    Novel:"Novel Prize Winner",
+                    Duration:"1885-1972",
+                    Born:" Hailey, Idaho, United States",
+                    Writting:"In A Station OF THE Metro",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://images.rapgenius.com/5102427751eaba1ad5ac4974e2db3106.624x392x1.jpg",
+                    profileImage: "https://www.theparisreview.org/il/c9e981da63/large/Ezra-Pound-young.jpg",
+                    detail:"Ezra Weston Loomis Pound was an expatriate American poet and critic, as well as a major ..",
+                    href:"https://en.wikipedia.org/wiki/Ezra_Pound"
+                  },
+                  {
+                    id: 3,
+                    first_name: "HILDA",
+                    last_name: " DOOLITTLE",
+                    gender: "Female",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1886-1961",
+                    Born:"Bethlehem, Pennsylvania, United States",
+                    Writting:"THE MYSTERIES REMAIN",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://sites.google.com/a/rbvhs-hirmas.com/hilda-doo-little/_/rsrc/1243908192289/Home/greek%20gods.jpg",
+                    profileImage: "https://supersededotcom.files.wordpress.com/2017/08/hdpoet-c1921.jpg?w=474",
+                    detail:" Doolittle is an American poet, novelist, and memoirist, associated with the early 20th..",
+                    href:"https://en.wikipedia.org/wiki/H.D."
+                     
+                  },
+                  {
+                    id: 4,
+                    first_name: "William",
+                    last_name: "Shakespeare",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1564–1616",
+                    Born: "Stratford-upon-Avon, United Kingdom",
+                    Writting:"Twelfth Night, Macbeth",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://images.gr-assets.com/books/1309201803l/18134.jpg",
+                    profileImage: "https://fthmb.tqn.com/cLwWCY4eLyqLt029pFkNxYeZxqw=/1500x1000/filters:no_upscale()/Shakespeare-58caac793df78c3c4fb664f7.jpg",
+                    detail:"William Shakespeare was an English poet, playwright and actor, widely regarded as the..",
+                    href:"https://en.wikipedia.org/wiki/William_Shakespeare"
+                     
+                  },
+                  {
+                    id: 5,
+                    first_name: "Dulce et",
+                    last_name: "Decorum Est",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1893-1918",
+                    Writting:"Welferd Owen",
+                    Born: "Oswestry, United Kingdom",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://i.telegraph.co.uk/multimedia/archive/02837/Wilfred-Owen-main_2837806b.jpg",
+                    profileImage: "http://www.theotherpages.org/poems/books/owen/wilfred_owen.jpg",
+                    detail:"Dulce et Decorum est is a poem written by Wilfred Owen during World War I, and..",
+                    href:"https://en.wikipedia.org/wiki/Dulce_et_Decorum_est"
+                     
+                  },
+                  {
+                    id: 6,
+                    first_name: "Thomas Ernest ",
+                    last_name: "Hulme",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1883-1919",
+                    Born: "Endon, United Kingdom",
+                    Writting:"Autumn night",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://theferkel.files.wordpress.com/2012/09/sleepy-hollow-farm-woodstock-vermont.jpg",
+                    profileImage: "http://www.ebooks-library.com/images/Authors/EFSF.jpg",
+                    detail:"Thomas Ernest Hulme was an English critic and poet who, through his writings on art, literature and politics",
+                    href:"https://en.wikipedia.org/wiki/T._E._Hulme"
+                     
+                  },
+                  {
+                    id: 7,
+                    first_name: "Thomas ",
+                    last_name: "Stearns Eliot",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1889-1965",
+                    Born: "St. Louis, Missouri, United States",
+                    Writting:" The Waste Land, The love song of Alfred  prufrock",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://www.brainyquote.com/photos_tr/en/t/tseliot/163219/tseliot1-2x.jpg",
+                    profileImage: "http://www.theimaginativeconservative.org/wp-content/uploads/2016/05/young-ts-eliot.jpg",
+                    detail:"Thomas Stearns Eliot, OM was a British essayist, publisher, playwright, literary.. ",
+                    href:"https://en.wikipedia.org/wiki/T._S._Eliot"
+                     
+                  },
+                  {
+                    id: 8,
+                    first_name: "Wystan",
+                    last_name: " Hugh Auden",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1907-1973",
+                    Born: "York, United Kingdom",
+                    Writting:" The Unknown citizen",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://audensociety.org/TheUnknownCitizen.png",
+                    profileImage: "https://collectionimages.npg.org.uk/std/mw49656/WH-Auden.jpg",
+                    detail:"Wystan Hugh Auden was an English-American poet. Auden's poetry was noted for its..",
+                    href:"https://en.wikipedia.org/wiki/W._H._Auden"
+                     
+                  },
+                  {
+                    id: 9,
+                    first_name: "Stephen Harold",
+                    last_name: "Spender",
+                    gender: "Male",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1909-1995",
+                    Born: "Kensington, London, United Kingdom",
+                    Writting:"An Elementary School Classroom in a Slum",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://thecrustycancerian.com/wp-content/uploads/2017/05/20110325280601602.jpg",
+                    profileImage: "https://media.poetryfoundation.org/m/image/797/Stephen_Spender.jpg?w=1200&h=1200&fit=max",
+                    detail:"Sir Stephen Harold Spender CBE was an English poet, novelist, and essayist who concentrated on themes..",
+                    href:"https://en.wikipedia.org/wiki/Stephen_Spender"
+                     
+                  },
+                  {
+                    id: 10,
+                    first_name: "Geoffrey",
+                    last_name: "Chaucer",
+                    gender: "Male",
+                    Born: "London, United Kingdom",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1343-1400",
+                    Writting:"The Wife of Bath's Tale,The Canterbury Tales, Troilus and Criseyde",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://faculty.arts.ubc.ca/sechard/GRAPHICS/346wife9.jpg",
+                    profileImage: "https://www.biography.com/.image/t_share/MTE5NDg0MDU0OTIxMzgxMzkx/geoffrey-chaucer-9245691-1-402.jpg",
+                    detail:"Geoffrey Chaucer, known as the Father of English literature..",
+                    href:"https://en.wikipedia.org/wiki/Geoffrey_Chaucer"
+                     
+                  },
+                  {
+                    id: 11,
+                    first_name: "Elizabeth",
+                    last_name: "",
+                    gender: "Female",
+                    Born: "Palace of Placentia, Greenwich",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"7 September 1533 24 March 1603",
+                    Writting:"The Cry of the Children, One Art, Praise Song for the Day",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://images.gr-assets.com/books/1415466146l/15995735.jpg",
+                    profileImage: "https://qph.ec.quoracdn.net/main-qimg-5f56ab3f9e4b01cb4e6c1b2025b4497f-c",
+                    detail:"Elizabeth I was Queen of England and Ireland from 17 November 1558 until her death on",
+                    href:"https://en.wikipedia.org/wiki/Elizabeth_(film)"
+                     
+                  },
+                  {
+                    id: 12,
+                    first_name: "Joseph ",
+                    last_name: "Addison",
+                    gender: "Male",
+                    Born: "Milston, United Kingdom",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"1 May 1672-17 June 1719",
+                    Writting:"The Cry of the Children, One Art, Praise Song for the Day",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://www.brainyquote.com/photos_tr/en/j/josephaddison/109002/josephaddison1-2x.jpg",
+                    profileImage: "http://www.azquotes.com/public/pictures/authors/a1/46/a1466a9336316a8dbade0e2f424427bd/53b11d8cbfb7c_joseph_addison.jpg",
+                    detail:"Joseph Addison was an English essayist, poet, playwright, and politician",
+                    href:"https://en.wikipedia.org/wiki/Joseph_Addison"
+                     
+                  },
+                  {
+                    id: 13,
+                    first_name: "Richard",
+                    last_name: "Steele",
+                    gender: "Male",
+                    Born: ", Dublin, Republic of Ireland",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"12 March 1672-1 September 1729,",
+                    Writting:" The tender husband, The letters of Richard Steele",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Joseph_Addison_and_Richard_Steele.jpg/220px-Joseph_Addison_and_Richard_Steele.jpg",
+                    profileImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Sir_Richard_Steele_by_Godfrey_Kneller_c.1712%2C_National_Portrait_Gallery%2C_London.JPG/220px-Sir_Richard_Steele_by_Godfrey_Kneller_c.1712%2C_National_Portrait_Gallery%2C_London.JPG",
+                    detail:"JSir Richard Steele was an Irish writer, playwright, and politician, remembered as co-founder, with his friend Joseph Addison, of the magazine The Tatler",
+                    href:"https://en.wikipedia.org/wiki/Richard_Steele"
+                     
+                  },
+                  {
+                    id: 14,
+                    first_name: "Daniel",
+                    last_name: " Defoe",
+                    gender: "Male",
+                    Born: "London, United Kingdom",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"13 September 1660-24 April 1731",
+                    Writting:" Crusoe, Robinson Crusoe on Mars",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://covers.feedbooks.net/book/102.jpg?size=large&t=1491307691",
+                    profileImage: "http://ben-ts.net/wp-content/uploads/2017/06/pepys.jpg",
+                    detail:"Daniel Defoe, born Daniel Foe, was an English trader, writer, journalist, pamphleteer and spy. He is most famous for his novel Robinson Crusoe, which is second only to the Bible in its number of translations",
+                    href:"https://en.wikipedia.org/wiki/Daniel_Defoe"
+                     
+                  },
+                  {
+                    id: 15,
+                    first_name: "Oliver",
+                    last_name: " Goldsmith",
+                    gender: "Male",
+                    Born: ", County Roscommon, Republic of Ireland",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"10 November 1728 - 4 April 1774",
+                    Writting:" A City Night-Piece.",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "http://www.coolwallpapers.me/download/597/2014/02/Blurred_City_Night_Painting_Wallpaper-1680x1050.jpg",
+                    profileImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Oliver_Goldsmith_by_Sir_Joshua_Reynolds.jpg/1200px-Oliver_Goldsmith_by_Sir_Joshua_Reynolds.jpg",
+                    detail:"Oliver Goldsmith was an Irish novelist, playwright and poet, who is best known for his novel The Vicar of Wakefield, his pastoral poem The Deserted Village, and his plays The Good-Natur'd Man and She Stoops to Conquer",
+                    href:"https://en.wikipedia.org/wiki/Oliver_Goldsmith"
+                     
+                  },
+                  {
+                    id: 16,
+                    first_name: "Samuel",
+                    last_name: " Johnson",
+                    gender: "Male",
+                    Born: "Lichfield, United Kingdom",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"18 September 1709 - 13 December 1784",
+                    Writting:" Expectations of Pleasure Frustrated",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://fthmb.tqn.com/w-o0XDz7Z8ksupKEh1lwY-6iE5Q=/2125x1411/filters:no_upscale():fill(FFCC00,1)/Getty_cuckoo-121704887-578947fb3df78c09e91ced81.jpg",
+                    profileImage: "https://cdn.vox-cdn.com/thumbor/4e1uRZKNdvGhvB_MNM077gf3D5U=/0x0:832x1119/1200x800/filters:focal(306x275:438x407)/cdn.vox-cdn.com/uploads/chorus_image/image/56731443/Samuel_Johnson_by_Joshua_Reynolds_2.0.jpg",
+                    detail:"Samuel Johnson, often referred to as Dr. Johnson, was an English writer who made lasting contributions to English literature as a poet, essayist, moralist, literary critic, biographer, editor and lexicographer.",
+                    href:"https://en.wikipedia.org/wiki/Samuel_Johnson"
+                     
+                  },
+                  {
+                    id: 17,
+                    first_name: "Amitav",
+                    last_name: "Ghosh",
+                    gender: "Male",
+                    Born: ", Kolkata",
+                    Novel:"Nobel Prize Winner",
+                    Duration:"11 July 1956 (age 61)",
+                    Writting:"Shadow line",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://thegirlsguidetoreading.files.wordpress.com/2015/09/24d42318d6ed701b5312eddefc1d7b82d7d113b2.gif",
+                    profileImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Amitav_Ghosh_by_Gage_Skidmore.jpg/1200px-Amitav_Ghosh_by_Gage_Skidmore.jpg",
+                    detail:"Amitav Ghosh is an Indian writer best known for his work in English fiction",
+                    href:"https://en.wikipedia.org/wiki/Amitav_Ghosh"
+                     
+                  },
+                  {
+                    id: 18,
+                    first_name: "Jayanta",
+                    last_name: "Mahapatra",
+                    gender: "Male",
+                    Born: ", Cuttack",
+                    Novel:"Nobel Prize Winner",
+                    Duration:" 22 October 1928 (age 89)",
+                    Writting:" A rain of rites, Shadow space, Hunger, Selected poems",
+                    color:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    color1:'#'+Math.floor(Math.random()*16777215).toString(16),
+                    imgBackground: "https://image.slidesharecdn.com/school-141208044852-conversion-gate02/95/schoolppt-1-638.jpg?cb=1418014191",
+                    profileImage: "http://www.telegraphindia.com/1151123/images/23orijayanta.jpg",
+                    detail:"Jayanta Mahapatra is one of the best known Indian English poets. He is the first ever Indian poet to win Sahitya Akademi award for English poetry",
+                    href:"https://en.wikipedia.org/wiki/Jayanta_Mahapatra"
+                     
+                  }
+               ];
+              
+            
+             
+               $(function() {
+                $('.popular').bxSlider({
+                  auto: true,
+                  autoControls: true,
+                  speed: 50,
+                  slideSelector: 'div.item',
+                  minSlides: 1,
+                  maxSlides: 1,
+                  moveSlides: 1,
+                  slideWidth: 500
+              
+              
+                });
+              });
+  
+
+               
+                $scope.IsVisible = true;
+                $scope.buttonValue=false;
+            };
+        });
+
+     
+
+        
+     </script>
+</body>
+</html>
